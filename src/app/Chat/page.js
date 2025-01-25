@@ -12,12 +12,6 @@ export function ChatRoom({ roomName, userId, onLeave, wsRef }) {
   useEffect(() => {
     const ws = wsRef.current;
 
-    // const handleIncomingMessage = (e) => {
-    //   const parsedMsg = JSON.parse(e.data.message);
-    //   setMessages((prev) => [...prev, parsedMsg]);
-    // };
-
-    // ws.addEventListener("message", handleIncomingMessage);
     ws.onmessage = (e)=>{
       const parsedMsg = JSON.parse(e.data);
       setMessages((prev) => [...prev, parsedMsg]);

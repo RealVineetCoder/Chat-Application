@@ -17,7 +17,7 @@ export default function ChatApp() {
   const wsRef = useRef();
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080");
+    const ws = new WebSocket("wss://chat-application-backend-a749.onrender.com");
     ws.onopen = () => console.log("WebSocket connection open");
     ws.onerror = (error) => console.error("WebSocket Error:", error);
     ws.onclose = () => console.log("WebSocket connection closed");
